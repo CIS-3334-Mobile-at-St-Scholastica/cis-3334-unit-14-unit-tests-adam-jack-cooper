@@ -26,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+        Log.d("oncreate junk", "This is onCreate. " );
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -51,10 +55,15 @@ public class MainActivity extends AppCompatActivity {
         buttonAdd = (Button) findViewById(R.id.buttonAddFish);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+
                 // Start up the add fish activity with an intent
                 Intent detailActIntent = new Intent(view.getContext(), AddFishActivity.class);
                 finish();
                 startActivity(detailActIntent);
+
+                Log.d("Add button", "Adding " + view.getContext() );
+
+
             }
         });
         // Set up the button to display details on one fish using a seperate activity
